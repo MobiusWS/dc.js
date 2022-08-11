@@ -223,6 +223,20 @@ module.exports = function (grunt) {
                             'node_modules/regression/dist/regression.js'
                         ],
                         dest: '<%= conf.web %>/js/'
+                    },
+                    {
+                        expand: true,
+                        flatten: true,
+                        nonull: true,
+                        src: [
+                            '<%= conf.dist %>/<%= conf.pkg.name %>.js',
+                            '<%= conf.dist %>/<%= conf.pkg.name %>.js.map',
+                            '<%= conf.dist %>/<%= conf.pkg.name %>.min.js',
+                            '<%= conf.dist %>/<%= conf.pkg.name %>.min.js.map',
+                            '<%= conf.dist %>/style/<%= conf.pkg.name %>.css',
+                            '<%= conf.dist %>/style/<%= conf.pkg.name %>.min.css',
+                        ],
+                        dest: './'
                     }
                 ]
             },
